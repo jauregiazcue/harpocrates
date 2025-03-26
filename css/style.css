@@ -1,0 +1,42 @@
+:root {
+  --text: #D1CFC0;
+  --background: #1F1F1F;
+  --primary: #F76F53;
+  --secondary: #3b4060;
+  --accent: #6847dd;
+  --hover: lightgray;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.myHeader {
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.myHeader h1 {
+  display: inline;
+}
+
+.myArticle {
+  width: 50%;
+  margin : auto auto;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: var(--accent);
+  background-color: var(--secondary);
+}
+
+.myFooter {
+  text-align: center;
+}
+
+hr {
+  width: 90%;
+  border: 3px solid var(--accent);
+  border-radius: 5px;
+}
