@@ -30,7 +30,7 @@ class HTMLArticle  {
         //Empty article
         this.article.innerHTML = "";
 
-        const title = this.makeNewElement("h2","QR Code Creator","articleTitle");
+        const title = this.makeNewElement("h2",this.title,"articleTitle");
         this.article.append(title);
 
         return this.article;
@@ -84,6 +84,6 @@ class HTMLMain {
 }
 
 
-let aux = new HTMLArticle("Cool Name");
+let aux = new HTMLArticle("QR Code Creator");
 let myMain = new HTMLMain(aux);
 
