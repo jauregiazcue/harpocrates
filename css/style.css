@@ -1,3 +1,4 @@
+/* --------------------- COLORS ---------------------*/
 :root {
   --text: #D1CFC0;
   --background: #1F1F1F;
@@ -11,30 +12,43 @@ body {
   background-color: var(--background);
   color: var(--text);
 }
-
+/* --------------------- HEADER ---------------------*/
 .myHeader {
 
   display: flex;
   justify-content: space-evenly;
+  height: 10vh;
 }
 
 .myHeader h1 {
   display: inline;
+  
+}
+/* --------------------- MAIN ---------------------*/
+.myMain {
+  min-height: 75vh;
 }
 
 .myArticle {
   width: 50%;
-  margin : auto auto;
+  margin : 2% auto;
   border-style: solid;
   border-radius: 5px;
   border-color: var(--accent);
   background-color: var(--secondary);
 }
 
+.myArticle h2 {
+  margin-left: 2%;
+}
+
+/* --------------------- FOOTER ---------------------*/
 .myFooter {
+  height: 10vh;
   text-align: center;
 }
 
+/* --------------------- OTHERS ---------------------*/
 hr {
   width: 90%;
   border: 3px solid var(--accent);
