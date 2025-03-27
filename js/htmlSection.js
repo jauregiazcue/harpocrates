@@ -6,16 +6,21 @@ class HTMLSection extends HTMLObject{
         this.title = title;
         this.objectType = "section";
     }
-
     render() {
         //Empty article
         this.object.innerHTML = "";
 
-        const title = this.makeNewElement("h2", this.title, "articleTitle");
+        const leftDiv = this.makeNewElement("div", "", "leftSection");
+        const leftform = this.makeNewElement("form", "");
+        const leftInput = this.makeNewElement("input", "");
+        leftInput.type = "text";
 
-        this.object.append(title);
+        const rightDiv = this.makeNewElement("div", "", "rightSection");
+
+        leftform.appendChild(leftInput);
+        leftDiv.appendChild(leftform);
+        this.object.append(leftDiv,rightDiv);
     }
-
 }
 
 export {HTMLSection};

@@ -29,6 +29,7 @@ body {
   min-height: 75vh;
 }
 
+/* --------------------- MAIN · Article ---------------------*/
 .myArticle {
   display: flex;
   flex-direction: column;
@@ -41,7 +42,7 @@ body {
   background-color: var(--secondary);
 
   box-shadow: 5px 5px 2px 2px var(--text);
-  transition: 5.0s;
+  
 }
 
 .myArticle .myTitle {
@@ -71,10 +72,25 @@ body {
   margin-left: 2%;
 }
 
-
+/* --------------------- MAIN · Section ---------------------*/
 .mySection {
   background-color: green;
   transition: 0.5s;
+}
+
+.mySection .leftSection {
+  width: 50%;
+  background-color: blue;
+}
+
+.leftSection input{
+  width: 100%;
+  height: 100px;
+}
+
+.mySection .rightSection {
+  width: 50%;
+  background-color: red;
 }
 
 /* --------------------- FOOTER ---------------------*/
