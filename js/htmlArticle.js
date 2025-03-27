@@ -5,6 +5,8 @@ class HTMLArticle extends HTMLObject{
         super();
         this.title = title;
         this.objectType = "article";
+        this.dropDownButton = null;
+        this.section = null;
     }
 
     render() {
@@ -13,11 +15,37 @@ class HTMLArticle extends HTMLObject{
 
         const title = this.makeNewElement("h2", this.title, "articleTitle");
 
-        const image = document.createElement("button");
-        image.classList.add("fa-solid","fa-caret-down");
-        this.object.append(title,image);
+        const titleSection = this.makeNewElement("section","","myTitle");
+
+        this.dropDownButton = document.createElement("button");
+        this.dropDownButton.classList.add("fa-solid","fa-caret-down");
+        
+
+
+        titleSection.append(title,this.dropDownButton);
+        this.object.appendChild(titleSection);
     }
 
+    setSection(section) {
+        this.section = section;
+        this.section.style.display = "none";
+
+
+        this.dropDownButton.addEventListener("click",()=>{
+            if(!this.section) return; 
+            console.log("Has enter " + this.section.style.display);
+            if(this.section.style.display == "none") {
+                this.dropDownButton.style.transform = "rotate(180deg)";
+                this.section.style.height = "auto";
+                this.section.style.display = "block";
+            } else {
+                this.dropDownButton.style.transform = "rotate(0deg)";
+                this.section.style.height = "0px";
+                this.section.style.display = "none";
+            }
+            
+        });
+    }
 }
 
 export {HTMLArticle};

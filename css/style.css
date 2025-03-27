@@ -31,7 +31,7 @@ body {
 
 .myArticle {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 
   width: 50%;
   margin : 2% auto;
@@ -41,6 +41,12 @@ body {
   background-color: var(--secondary);
 
   box-shadow: 5px 5px 2px 2px var(--text);
+  transition: 5.0s;
+}
+
+.myArticle .myTitle {
+  display: flex;
+  justify-content: space-between;
 }
 
 .myArticle h2 {
@@ -61,12 +67,14 @@ body {
   font-size: xx-large;
 }
 
-
-
-
-
 .myArticle h2 {
   margin-left: 2%;
+}
+
+
+.mySection {
+  background-color: green;
+  transition: 0.5s;
 }
 
 /* --------------------- FOOTER ---------------------*/

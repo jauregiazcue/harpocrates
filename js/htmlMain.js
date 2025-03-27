@@ -1,10 +1,11 @@
 
 
 class HTMLMain {
-    constructor(...articles) {
+    constructor(articles) {
         this.articles = articles;
         this.setHeader();
-        this.setMain(...articles);
+        this.main = document.getElementsByClassName("myMain")[0];
+        this.addArticlesToMain(articles);
         this.setFooter();
         
     }
@@ -26,13 +27,12 @@ class HTMLMain {
 
     }
 
-    setMain(...articles) {
-        this.main = document.getElementsByClassName("myMain")[0];
-        console.log(this.main);
+    addArticlesToMain(articles) {
         for(let article of articles) {
             article.initHTML(this.main,"myArticle");
         }
     }
+
 
     setFooter() {
         this.footer = document.getElementsByClassName("myFooter")[0];
