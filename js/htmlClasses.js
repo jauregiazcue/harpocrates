@@ -1,6 +1,5 @@
 
 
-
 class HTMLMain {
     constructor(...articles) {
         this.articles = articles;
@@ -31,8 +30,7 @@ class HTMLMain {
         this.main = document.getElementsByClassName("myMain")[0];
         console.log(this.main);
         for(let article of articles) {
-            article.initHTML("myArticle");
-            this.main.appendChild(article.article);
+            article.initHTML(this.main,"myArticle");
         }
     }
 
