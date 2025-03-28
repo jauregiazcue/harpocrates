@@ -1,10 +1,11 @@
 /* --------------------- COLORS ---------------------*/
 :root {
-  --text: #D1CFC0;
-  --background: #1F1F1F;
-  --primary: #F76F53;
-  --secondary: #3b4060;
-  --accent: #D1CFC0;
+  --text: #32936F;
+  --articleText: #DCD3CB;
+  --background: #403C4D;
+  --primary: #403C4D;
+  --secondary: #403C4D;
+  --accent: #32936F;
   --hover: lightgray;
 }
 
@@ -12,9 +13,9 @@ body {
   background-color: var(--background);
   color: var(--text);
 }
+
 /* --------------------- HEADER ---------------------*/
 .myHeader {
-
   display: flex;
   justify-content: space-evenly;
   height: 10vh;
@@ -22,8 +23,9 @@ body {
 
 .myHeader h1 {
   display: inline;
-  
+
 }
+
 /* --------------------- MAIN ---------------------*/
 .myMain {
   min-height: 75vh;
@@ -35,30 +37,31 @@ body {
   flex-direction: column;
 
   width: 50%;
-  margin : 2% auto;
+  margin: 2% auto;
   border-style: solid;
   border-radius: 5px;
-  border-color: var(--secondary);
-  background-color: var(--secondary);
+  border-color: var(--accent);
+  background-color: var(--primary);
 
-  box-shadow: 5px 5px 2px 2px var(--text);
-  
 }
 
 .myArticle .myTitle {
   display: flex;
   justify-content: space-between;
+
 }
 
 .myArticle h2 {
+  color: var(--articleText);
   display: inline;
-  
+
 }
 
 .myArticle button {
-  width:50px;
-  color: var(--text);
-  background-color: rgba(0,0,0,0);
+
+  width: 50px;
+  color: var(--articleText);
+  background-color: rgba(0, 0, 0, 0);
   border-style: none;
   font-size: large;
   transition: 0.5s;
@@ -74,24 +77,60 @@ body {
 
 /* --------------------- MAIN · Section ---------------------*/
 .mySection {
-  background-color: green;
+  display: flex;
+  justify-content: center;
+  border-top-style: solid;
+  background-color: var(--secondary);
   transition: 0.5s;
 }
 
 .mySection .leftSection {
   width: 50%;
-  background-color: blue;
 }
 
-.leftSection input{
-  width: 100%;
-  height: 100px;
+.leftSection form {
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  vertical-align: top;
+  margin: auto auto;
+}
+
+.leftSection textarea {
+  resize: none;
+  text-align: left;
+  vertical-align: top;
+  width: 75%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--articleText);
+  
 }
 
 .mySection .rightSection {
   width: 50%;
-  background-color: red;
 }
+
+.rightSection form {
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  vertical-align: top;
+  margin: auto auto;
+}
+
+.rightSection textarea {
+  resize: none;
+  text-align: left;
+  vertical-align: top;
+  width: 75%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--articleText);
+
+}
+
+
 
 /* --------------------- FOOTER ---------------------*/
 .myFooter {
@@ -102,6 +141,6 @@ body {
 /* --------------------- OTHERS ---------------------*/
 hr {
   width: 90%;
-  border: 3px solid var(--accent);
+  border: 1px solid var(--accent);
   border-radius: 5px;
 }

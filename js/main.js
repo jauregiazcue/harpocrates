@@ -1,9 +1,9 @@
 import { HTMLMain } from "./htmlMain.js"
 import { HTMLArticle } from "./htmlArticle.js";
 import { HTMLSection } from "./htmlSection.js";
-
-
-
+import { HTMLQRSection } from "./htmlQrSection.js";
+import { HTMLAtbashSection } from "./htmlAtbashSection.js";
+import { HTMLCaesarSection } from "./htmlCaesarSection.js";
 
 function main() {
     //SET INITIAL ARTICLE
@@ -16,11 +16,11 @@ function main() {
     ]
 
     let sectionList = [
-        new HTMLSection("Test QR"),
-        new HTMLSection("Test QR"),
-        new HTMLSection("Test QR"),
-        new HTMLSection("Test QR"),
-        new HTMLSection("Test QR")
+        new HTMLQRSection("Test QR"),
+        new HTMLCaesarSection("Test QR"),
+        new HTMLAtbashSection("Test QR"),
+        new HTMLAtbashSection("Test QR"),
+        new HTMLCaesarSection("Test QR")
     ]
 
     let myMain = new HTMLMain(articleList);

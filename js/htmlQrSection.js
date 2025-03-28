@@ -1,10 +1,7 @@
-import { HTMLObject } from "./htmlObject.js";
-
-class HTMLSection extends HTMLObject{
+import { HTMLSection } from "./htmlSection.js";
+class HTMLQRSection extends HTMLSection{
     constructor(title) {
-        super();
-        this.title = title;
-        this.objectType = "section";
+        super(title);
     }
     render() {
         //Empty article
@@ -15,11 +12,14 @@ class HTMLSection extends HTMLObject{
         const leftInput = this.makeNewElement("textarea", "");
 
         const rightDiv = this.makeNewElement("div", "", "rightSection");
-
+        const image = this.makeNewElement("img", "");
+        //image.src="../assets/QuestionMark.png";
+        
         leftform.appendChild(leftInput);
         leftDiv.appendChild(leftform);
+        rightDiv.appendChild(image);
         this.object.append(leftDiv,rightDiv);
     }
 }
 
-export {HTMLSection};
+export{HTMLQRSection};

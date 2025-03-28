@@ -33,11 +33,10 @@ class HTMLArticle extends HTMLObject{
 
         this.dropDownButton.addEventListener("click",()=>{
             if(!this.section) return; 
-            console.log("Has enter " + this.section.style.display);
             if(this.section.style.display == "none") {
                 this.dropDownButton.style.transform = "rotate(180deg)";
                 this.section.style.height = "auto";
-                this.section.style.display = "block";
+                this.section.style.display = "flex";
             } else {
                 this.dropDownButton.style.transform = "rotate(0deg)";
                 this.section.style.height = "0px";

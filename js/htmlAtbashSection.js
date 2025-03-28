@@ -1,10 +1,8 @@
-import { HTMLObject } from "./htmlObject.js";
+import { HTMLSection } from "./htmlSection.js";
 
-class HTMLSection extends HTMLObject{
+class HTMLAtbashSection extends HTMLSection{
     constructor(title) {
-        super();
-        this.title = title;
-        this.objectType = "section";
+        super(title);
     }
     render() {
         //Empty article
@@ -13,13 +11,20 @@ class HTMLSection extends HTMLObject{
         const leftDiv = this.makeNewElement("div", "", "leftSection");
         const leftform = this.makeNewElement("form", "");
         const leftInput = this.makeNewElement("textarea", "");
+        //leftInput.type = "text";
 
         const rightDiv = this.makeNewElement("div", "", "rightSection");
+        const rightform = this.makeNewElement("form", "");
+        const rightInput = this.makeNewElement("textarea", "");
+
 
         leftform.appendChild(leftInput);
         leftDiv.appendChild(leftform);
+
+        rightform.appendChild(rightInput);
+        rightDiv.appendChild(rightform);
         this.object.append(leftDiv,rightDiv);
     }
 }
 
-export {HTMLSection};
+export{HTMLAtbashSection};

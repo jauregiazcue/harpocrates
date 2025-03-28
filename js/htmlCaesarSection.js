@@ -1,10 +1,8 @@
-import { HTMLObject } from "./htmlObject.js";
+import { HTMLSection } from "./htmlSection.js";
 
-class HTMLSection extends HTMLObject{
+class HTMLCaesarSection extends HTMLSection{
     constructor(title) {
-        super();
-        this.title = title;
-        this.objectType = "section";
+        super(title);
     }
     render() {
         //Empty article
@@ -22,4 +20,4 @@ class HTMLSection extends HTMLObject{
     }
 }
 
-export {HTMLSection};
+export {HTMLCaesarSection};
