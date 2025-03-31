@@ -1,8 +1,8 @@
 import { HTMLMain } from "./htmlMain.js"
 import { HTMLArticle } from "./htmlArticle.js";
-import { HTMLSection } from "./htmlSection.js";
 import { HTMLQRSection } from "./htmlQrSection.js";
 import { HTMLAtbashSection } from "./htmlAtbashSection.js";
+import { HTMLAlphabetToNumberSection } from "./htmlAlphabetToNumberSection.js";
 import { HTMLCaesarSection } from "./htmlCaesarSection.js";
 
 function main() {
@@ -19,7 +19,7 @@ function main() {
         new HTMLQRSection("Test QR"),
         new HTMLCaesarSection("Test QR"),
         new HTMLAtbashSection("Test QR"),
-        new HTMLAtbashSection("Test QR"),
+        new HTMLAlphabetToNumberSection("Test QR"),
         new HTMLCaesarSection("Test QR")
     ]
 
