@@ -12,7 +12,6 @@ class Fetch {
     
             const response = await this.setResponse(finalURL,key);
             const data = await response.blob();
-            console.log(data);
             return data;
         } catch (error) {
             console.error(error);
@@ -32,7 +31,7 @@ class Fetch {
     async getGameData(url) {
         let myURL = "https://api.qrserver.com/v1/create-qr-code/?data=" + url + "&amp;size=100x100";
         try {
-            myURL = new URL(myURL);   
+            let aux = new URL(url);   
         } catch {
             return false;
         }

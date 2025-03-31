@@ -43,7 +43,6 @@ class HTMLQRSection extends HTMLSection {
 
         this.leftInput.addEventListener('input', () => {
             fetchManager.getGameData(this.leftInput.value).then((data) => {
-                console.log(this.leftInput.value)
                 if (data != false) {
                     const blobUrl = URL.createObjectURL(data);
                     this.image.src = blobUrl;
