@@ -84,14 +84,17 @@ body {
   transition: 0.5s;
 }
 
+
+/* --------------------- MAIN · Section · Left ---------------------*/
 .mySection .leftSection {
   width: 50%;
+  background-color: red;
 }
 
 .leftSection form {
   width: 90%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5%;
+  padding-bottom: 5%;
   text-align: center;
   vertical-align: top;
   margin: auto auto;
@@ -106,15 +109,16 @@ body {
   background-color: var(--articleText);
   
 }
-
+/* --------------------- MAIN · Section · Right ---------------------*/
 .mySection .rightSection {
   width: 50%;
+  background-color: blue;
 }
 
 .rightSection form {
   width: 90%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5%;
+  padding-bottom: 5%;
   text-align: center;
   vertical-align: top;
   margin: auto auto;
@@ -128,6 +132,18 @@ body {
   aspect-ratio: 1 / 1;
   background-color: var(--articleText);
 
+}
+
+.rightSection img {
+  width: 75%;
+  height: 83%;
+
+  background-color: green;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 
