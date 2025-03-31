@@ -35,7 +35,8 @@ class HTMLQRSection extends HTMLSection {
             }
         });
 
-        this.link = this.makeNewElement("button", "Button");
+        this.link = this.makeNewElement("button","");
+        this.link.classList.add("fa-solid","fa-file-arrow-down");
         this.link.addEventListener('click', () => {
             this.download(this.image.src);
         });
@@ -55,7 +56,7 @@ class HTMLQRSection extends HTMLSection {
         leftform.appendChild(this.leftInput);
         leftDiv.appendChild(leftform);
         rightDiv.appendChild(this.image);
-        leftDiv.appendChild(this.link);
+        rightDiv.appendChild(this.link);
         this.object.append(leftDiv, rightDiv);
     }
 

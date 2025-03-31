@@ -48,7 +48,10 @@ body {
 .myArticle .myTitle {
   display: flex;
   justify-content: space-between;
+}
 
+.myArticle .myTitle:hover {
+  cursor:pointer;
 }
 
 .myArticle h2 {
@@ -57,7 +60,7 @@ body {
 
 }
 
-.myArticle button {
+.myArticleButton {
 
   width: 50px;
   color: var(--articleText);
@@ -67,8 +70,9 @@ body {
   transition: 0.5s;
 }
 
-.myArticle button:hover {
+.myArticleButton:hover {
   font-size: xx-large;
+  
 }
 
 .myArticle h2 {
@@ -88,7 +92,6 @@ body {
 /* --------------------- MAIN · Section · Left ---------------------*/
 .mySection .leftSection {
   width: 50%;
-  background-color: red;
 }
 
 .leftSection form {
@@ -109,10 +112,15 @@ body {
   background-color: var(--articleText);
   
 }
+
+
 /* --------------------- MAIN · Section · Right ---------------------*/
 .mySection .rightSection {
   width: 50%;
-  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .rightSection form {
@@ -138,7 +146,6 @@ body {
   width: 75%;
   height: 83%;
 
-  background-color: green;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -147,6 +154,17 @@ body {
 }
 
 
+.rightSection button {
+  width: 50px;
+  color: var(--articleText);
+  background-color: rgba(0, 0, 0, 0);
+  border-style: none;
+  font-size: large;
+}
+
+.rightSection button:hover {
+  cursor:pointer;
+}
 
 /* --------------------- FOOTER ---------------------*/
 .myFooter {
