@@ -1,9 +1,9 @@
 import { HTMLMain } from "./htmlMain.js"
 import { HTMLArticle } from "./htmlArticle.js";
-import { HTMLQRSection } from "./htmlQrSection.js";
-import { HTMLAtbashSection } from "./htmlAtbashSection.js";
-import { HTMLAlphabetToNumberSection } from "./htmlAlphabetToNumberSection.js";
-import { HTMLCaesarSection } from "./htmlCaesarSection.js";
+import { HTMLQRSection } from "./section/htmlQrSection.js";
+import { HTMLAtbashSection } from "./section/cipher/htmlAtbashSection.js";
+import { HTMLAlphabetToNumberSection } from "./section/cipher/htmlAlphabetToNumberSection.js";
+import { HTMLCaesarSection } from "./section/cipher/htmlCaesarSection.js";
 
 function main() {
     //SET INITIAL ARTICLE
@@ -24,9 +24,16 @@ function main() {
     ]
 
     let myMain = new HTMLMain(articleList);
-    for(let i = 0; i < sectionList.length; i++) {
-        sectionList[i].initHTML(articleList[i].object, "mySection");
-        articleList[i].setSection(sectionList[i].object);
+    for (let i = 0; i < sectionList.length; i++) {
+        if (sectionList[i] instanceof HTMLCaesarSection) {
+            console.log(articleList[i].title);
+            sectionList[i].initHTML(articleList[i].object, "myCaesarSection");
+            articleList[i].setSection(sectionList[i].object);
+        } else {
+            sectionList[i].initHTML(articleList[i].object, "mySection");
+            articleList[i].setSection(sectionList[i].object);
+        }
+
     }
 }
 

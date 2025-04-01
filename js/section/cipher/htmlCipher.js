@@ -1,6 +1,6 @@
-import { HTMLSection } from "./htmlSection.js";
+import { HTMLSection } from "../htmlSection.js";
 
-class HTMLAtbashSection extends HTMLSection{
+class HTMLCipherSection extends HTMLSection{
     constructor(title) {
         super(title);
         this.characters = "abcdefghijklmnopqrstuvwxyz";
@@ -11,7 +11,7 @@ class HTMLAtbashSection extends HTMLSection{
 
         const leftDiv = this.makeNewElement("div", "", "leftSection");
         const leftform = this.makeNewElement("form", "");
-        this.leftInput = this.makeNewElement("textarea", "");
+        this.leftInput = this.makeNewElement("textarea", "","inputSection");
 
         this.leftInput.addEventListener('input',() => {
             this.setFunction();
@@ -19,7 +19,7 @@ class HTMLAtbashSection extends HTMLSection{
 
         const rightDiv = this.makeNewElement("div", "", "rightSection");
         const rightform = this.makeNewElement("form", "");
-        this.rightInput = this.makeNewElement("textarea", "");
+        this.rightInput = this.makeNewElement("textarea", "","inputSection");
 
         this.rightInput.readOnly = true;
         leftform.appendChild(this.leftInput);
@@ -43,11 +43,8 @@ class HTMLAtbashSection extends HTMLSection{
     }
 
     changeCharacter(character) {
-        let index = this.characters.indexOf(character); 
-        if(index == -1) return character;
-        let reverseCharacter = this.characters.split('').reverse().join('');
-        return reverseCharacter[index];
+
     }
 }
 
-export{HTMLAtbashSection};
+export{HTMLCipherSection};

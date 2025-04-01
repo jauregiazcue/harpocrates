@@ -1,6 +1,6 @@
-import { HTMLAtbashSection } from "./htmlAtbashSection.js";
+import { HTMLCipherSection } from "./htmlCipher.js";
 
-class HTMLAlphabetToNumberSection extends HTMLAtbashSection{
+class HTMLAlphabetToNumberSection extends HTMLCipherSection{
     constructor(title) {
         super(title);
         this.numbers = [];

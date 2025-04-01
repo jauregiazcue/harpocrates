@@ -1,5 +1,5 @@
 import { HTMLSection } from "./htmlSection.js";
-import { fetchManager } from "./api.js";
+import { fetchManager } from "../api.js";
 
 class HTMLQRSection extends HTMLSection {
     constructor(title) {
@@ -23,7 +23,7 @@ class HTMLQRSection extends HTMLSection {
 
         const leftDiv = this.makeNewElement("div", "", "leftSection");
         const leftform = this.makeNewElement("form", "");
-        this.leftInput = this.makeNewElement("textarea", "");
+        this.leftInput = this.makeNewElement("textarea", "","inputSection");
 
         const rightDiv = this.makeNewElement("div", "", "rightSection");
         this.image = this.makeNewElement("img", "");

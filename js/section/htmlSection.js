@@ -1,4 +1,4 @@
-import { HTMLObject } from "./htmlObject.js";
+import { HTMLObject } from "../htmlObject.js";
 
 class HTMLSection extends HTMLObject{
     constructor(title) {
