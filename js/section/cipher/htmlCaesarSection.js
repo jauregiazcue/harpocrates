@@ -26,9 +26,7 @@ class HTMLCaesarSection extends HTMLCipherSection {
         });
 
         this.key.addEventListener('input', () => {
-            if(this.key.value == "" || this.key.value < 0 || this.key.value > 25) {
-                this.key.value = 0;
-            }
+            this.keySettings();
             this.setFunction();
         });
 
@@ -56,6 +54,12 @@ class HTMLCaesarSection extends HTMLCipherSection {
         if(index == -1) return character;
 
         return this.characters[(index + parseInt(this.key.value)) % this.characters.length];
+    }
+
+    keySettings() {
+        if(this.key.value == "" || this.key.value < 0 || this.key.value > 25) {
+            this.key.value = 0;
+        }
     }
 }
 
