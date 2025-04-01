@@ -16,12 +16,22 @@ class HTMLCaesarSection extends HTMLCipherSection {
         const leftform = this.makeNewElement("form", "","keyForm");
 
         const keyForm = this.makeNewElement("form", "");
-        this.key = this.makeNewElement("textarea", "","keySection");
+        this.key = this.makeNewElement("input", "","keySection");
+        this.key.type = "number";
+        this.key.value = 0;
         this.leftInput = this.makeNewElement("textarea", "", "inputSection");
 
         this.leftInput.addEventListener('input', () => {
             this.setFunction();
         });
+
+        this.key.addEventListener('input', () => {
+            if(this.key.value == "" || this.key.value < 0 || this.key.value > 25) {
+                this.key.value = 0;
+            }
+            this.setFunction();
+        });
+
 
         const rightDiv = this.makeNewElement("div", "", "rightSection");
         const rightform = this.makeNewElement("form", "");
@@ -38,6 +48,14 @@ class HTMLCaesarSection extends HTMLCipherSection {
         topDiv.appendChild(keyForm);
         bottomDiv.append(leftDiv,rightDiv);
         this.object.append(topDiv,bottomDiv);
+    }
+
+    changeCharacter(character) {
+        
+        let index = this.characters.indexOf(character);
+        if(index == -1) return character;
+
+        return this.characters[(index + parseInt(this.key.value)) % this.characters.length];
     }
 }
 

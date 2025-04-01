@@ -36,14 +36,13 @@ class HTMLCipherSection extends HTMLSection{
         let leftArray = this.leftInput.value.split("");
         let rightString = "";
         for(let i = 0; i < leftArray.length; i++) {
-            console.log(leftArray[i]);
             rightString += this.changeCharacter(leftArray[i]);
         }
         this.rightInput.value = rightString;
     }
 
     changeCharacter(character) {
-
+        
     }
 }
 
