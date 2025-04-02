@@ -1,8 +1,9 @@
 
 
 class HTMLMain {
-    constructor(articles) {
+    constructor(searchBar,articles) {
         this.articles = articles;
+        this.searchBar = searchBar;
         this.setHeader();
         this.main = document.getElementsByClassName("myMain")[0];
         this.addArticlesToMain(articles);
@@ -28,6 +29,7 @@ class HTMLMain {
     }
 
     addArticlesToMain(articles) {
+        this.searchBar.initHTML(this.main,"mySearchBar");
         for(let article of articles) {
             article.initHTML(this.main,"myArticle");
         }

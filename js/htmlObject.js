@@ -24,8 +24,8 @@ class HTMLObject {
     makeNewElement(elementType, textContent = "", classes) {
         const newElement = document.createElement(elementType);
         newElement.textContent = textContent;
-        newElement.classList.add(classes);
-
+        if(classes) newElement.classList.add(classes);
+        
         return newElement;
     }
 

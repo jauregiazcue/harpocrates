@@ -32,6 +32,29 @@ body {
   min-height: 75vh;
 }
 
+.mySearchBar {
+  display: flex;
+
+  width: 50%;
+  margin: 2% auto;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: var(--accent);
+  
+  background-color: var(--primary);
+}
+
+.mySearchBar form {
+  width:95%;
+}
+
+.mySearchBar input {
+  width:100%;
+}
+
+.mySearchBar button {
+  width: 5%;
+}
 /* --------------------- MAIN · Article ---------------------*/
 .myArticle {
   display: flex;
@@ -52,7 +75,7 @@ body {
 }
 
 .myArticle .myTitle:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .myArticle h2 {
@@ -73,7 +96,7 @@ body {
 
 .myArticleButton:hover {
   font-size: xx-large;
-  
+
 }
 
 .myArticle h2 {
@@ -134,7 +157,8 @@ body {
   width: 50%;
 }
 
-.leftSection form, .rightSection form{
+.leftSection form,
+.rightSection form {
   width: 90%;
   padding-top: 5%;
   padding-bottom: 5%;
@@ -176,7 +200,7 @@ body {
   margin-top: 5%;
   margin-bottom: 5%;
   border-style: solid;
-  border-color:var(--accent);
+  border-color: var(--accent);
 }
 
 
@@ -189,7 +213,7 @@ body {
 }
 
 .rightSection button:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 /* --------------------- FOOTER ---------------------*/

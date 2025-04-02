@@ -1,5 +1,6 @@
 import { HTMLMain } from "./htmlMain.js"
 import { HTMLArticle } from "./htmlArticle.js";
+import { HTMLSearchBar } from "./htmlSearchBar.js";
 import { HTMLQRSection } from "./section/htmlQrSection.js";
 import { HTMLAtbashSection } from "./section/cipher/htmlAtbashSection.js";
 import { HTMLAlphabetToNumberSection } from "./section/cipher/htmlAlphabetToNumberSection.js";
@@ -13,7 +14,7 @@ function main() {
         new HTMLArticle("Caesar Cipher"),
         new HTMLArticle("Atbash Cipher"),
         new HTMLArticle("A1Z26 Cipher"),
-        new HTMLArticle("Vigere Cipher")
+        new HTMLArticle("Vigenere Cipher")
     ]
 
     let sectionList = [
@@ -24,7 +25,8 @@ function main() {
         new HTMLVigereSection("Test QR")
     ]
 
-    let myMain = new HTMLMain(articleList);
+    let myMain = new HTMLMain(new HTMLSearchBar(),articleList);
+
     for (let i = 0; i < sectionList.length; i++) {
         if (sectionList[i] instanceof HTMLCaesarSection) {
             console.log(articleList[i].title);
