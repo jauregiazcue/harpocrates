@@ -6,7 +6,7 @@ class HTMLMain {
         this.searchBar = searchBar;
         this.setHeader();
         this.main = document.getElementsByClassName("myMain")[0];
-        this.addArticlesToMain(articles);
+        this.addArticlesToMain();
         this.setFooter();
         
     }
@@ -14,23 +14,21 @@ class HTMLMain {
     setHeader() {
         this.header = document.getElementsByClassName("myHeader")[0];
 
-        const image = document.createElement("h1");
-        image.classList.add("fa-solid","fa-user-secret");
-
-        const image2 = document.createElement("h1");
-        image2.classList.add("fa-solid","fa-user-secret");
+        this.dropDownButton = document.createElement("button");
+        this.dropDownButton.classList.add("fa-solid","fa-bookmark");
         
-
         const text = document.createElement("h1");
-        text.textContent = "Harpocrates";
+        text.textContent =  " Harpocrates";
+        text.classList.add("fa-solid","fa-user-secret");
 
-        this.header.append(image,text,image2);
+        this.header.append(text,this.dropDownButton);
 
     }
 
-    addArticlesToMain(articles) {
+    addArticlesToMain() {
         this.searchBar.initHTML(this.main,"mySearchBar");
-        for(let article of articles) {
+        this.searchBar.setArticles(this.articles);
+        for(let article of this.articles) {
             article.initHTML(this.main,"myArticle");
         }
     }

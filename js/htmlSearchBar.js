@@ -1,10 +1,15 @@
 import { HTMLObject } from "./htmlObject.js";
+import { HTMLCaesarSection } from "./section/cipher/htmlCaesarSection.js";
 
 class HTMLSearchBar extends HTMLObject{
     constructor() {
         super();
         this.objectType = "article";
+        this.articles = [];
+    }
 
+    setArticles(articles) {
+        this.articles = articles;
     }
 
     render() {
@@ -13,39 +18,46 @@ class HTMLSearchBar extends HTMLObject{
         const keyForm = this.makeNewElement("form", "");
         this.key = this.makeNewElement("input", "");
 
-        this.dropDownButton = document.createElement("button");
-        this.dropDownButton.classList.add("fa-solid","fa-bookmark");
-        
-
-        keyForm.appendChild(this.key);
-        this.object.append(keyForm,this.dropDownButton);
-    }
-
-    setSection(section) {
-        this.section = section;
-        this.section.style.display = "none";
-
-        this.br = document.createElement("br");
-        this.object.appendChild(this.br);
-        this.br.style.display = "none";
-        this.titleSection.addEventListener("click",(event)=>{
-            event.stopPropagation();
-            if(!this.section) return; 
-            if(this.section.style.display == "none") {
-                this.dropDownButton.style.transform = "rotate(180deg)";
-                this.section.style.height = "auto";
-                this.section.style.display = "flex";
-                this.br.style.display = "block";
+        this.key.addEventListener('input', () => {
+            if(this.key.value == "")  {
+                this.activateAllArticles();
             } else {
-                this.dropDownButton.style.transform = "rotate(0deg)";
-                this.section.style.height = "0px";
-                this.section.style.display = "none";
-                this.br.style.display = "none";
+                this.checkNames(this.key.value);
             }
+
             
         });
 
         
+        keyForm.appendChild(this.key);
+        this.object.append(keyForm);
+    }
+
+    activateAllArticles() {
+        for(let article of this.articles) {
+            if (article instanceof HTMLCaesarSection) {
+                article.object.classList.add("myCaesarSection");
+                article.object.classList.remove("myHiddenArticle");
+            } else {
+                article.object.classList.add("myArticle");
+                article.object.classList.remove("myHiddenArticle");
+            }
+            
+        }
+    }
+
+    checkNames(search) {
+        let smallSearch = search.toLowerCase();
+        for(let article of this.articles) {
+            let title = article.title.toLowerCase();
+            if(title.includes(smallSearch)) {
+                article.object.classList.add("myArticle");
+                article.object.classList.remove("myHiddenArticle");
+            } else {
+                article.object.classList.add("myHiddenArticle");
+                article.object.classList.remove("myArticle");
+            }
+        }
     }
 }
 

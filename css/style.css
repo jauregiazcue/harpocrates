@@ -18,15 +18,23 @@ body {
 /* --------------------- HEADER ---------------------*/
 .myHeader {
   display: flex;
-  justify-content: space-evenly;
+  margin: auto auto;
+  width: 80%;
+  justify-content: space-between;
   height: 10vh;
 }
 
 .myHeader h1 {
   display: inline;
-
 }
 
+.myHeader button {
+  width: 20%;
+  font-size: xx-large;
+  color: var(--accent);
+  background-color: rgba(0, 0, 0, 0);
+  border-style: none;
+}
 /* --------------------- MAIN ---------------------*/
 .myMain {
   min-height: 75vh;
@@ -34,27 +42,25 @@ body {
 
 .mySearchBar {
   display: flex;
-
+  justify-content: space-between;
   width: 50%;
   margin: 2% auto;
-  border-style: solid;
-  border-radius: 5px;
-  border-color: var(--accent);
-  
-  background-color: var(--primary);
 }
 
 .mySearchBar form {
-  width:95%;
+  width:90%;
+  margin : auto auto;
 }
 
 .mySearchBar input {
   width:100%;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: var(--accent);
+  background-color: var(--textBackground);
+  color: var(--articleText);
 }
 
-.mySearchBar button {
-  width: 5%;
-}
 /* --------------------- MAIN · Article ---------------------*/
 .myArticle {
   display: flex;
@@ -94,13 +100,13 @@ body {
   transition: 0.5s;
 }
 
-.myArticleButton:hover {
-  font-size: xx-large;
-
-}
 
 .myArticle h2 {
   margin-left: 2%;
+}
+
+.myHiddenArticle {
+  display: none;
 }
 
 /* --------------------- MAIN · Section ---------------------*/
