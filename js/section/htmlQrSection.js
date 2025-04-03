@@ -25,7 +25,7 @@ class HTMLQRSection extends HTMLSection {
 
         this.image = this.makeNewElement("img", "");
 
-        fetchManager.getGameData("https://jauregiazcue.github.io/portfolio/").then((data) => {
+        fetchManager.getQrCode("https://jauregiazcue.github.io/portfolio/").then((data) => {
             if (data != false) {
                 const blobUrl = URL.createObjectURL(data);
                 this.image.src = blobUrl;
@@ -39,7 +39,7 @@ class HTMLQRSection extends HTMLSection {
         });
 
         this.leftInput.addEventListener('input', () => {
-            fetchManager.getGameData(this.leftInput.value).then((data) => {
+            fetchManager.getQrCode(this.leftInput.value).then((data) => {
                 if (data != false) {
                     const blobUrl = URL.createObjectURL(data);
                     this.image.src = blobUrl;

@@ -1,14 +1,15 @@
-import { HTMLMain } from "./htmlMain.js"
-import { HTMLArticle } from "./htmlArticle.js";
+import { HTMLMain } from "./htmlMain.js";
 import { HTMLSearchBar } from "./htmlSearchBar.js";
+import { HTMLArticle } from "./htmlArticle.js";
 import { HTMLQRSection } from "./section/htmlQrSection.js";
 import { HTMLAtbashSection } from "./section/cipher/htmlAtbashSection.js";
 import { HTMLAlphabetToNumberSection } from "./section/cipher/htmlAlphabetToNumberSection.js";
 import { HTMLCaesarSection } from "./section/cipher/htmlCaesarSection.js";
 import { HTMLVigereSection } from "./section/cipher/htmlVigereSection.js";
 
+
 function main() {
-    //SET INITIAL ARTICLE
+    //Set articles
     let articleList = [
         new HTMLArticle("QR Code Creator"),
         new HTMLArticle("Caesar Cipher"),
@@ -16,7 +17,7 @@ function main() {
         new HTMLArticle("A1Z26 Cipher"),
         new HTMLArticle("Vigenere Cipher")
     ]
-
+    //Set the sections of the articles
     let sectionList = [
         new HTMLQRSection(),
         new HTMLCaesarSection(),
@@ -24,9 +25,10 @@ function main() {
         new HTMLAlphabetToNumberSection(),
         new HTMLVigereSection()
     ]
+    //Create the main with a search bar and the articles
+    new HTMLMain(new HTMLSearchBar(), articleList);
 
-    let myMain = new HTMLMain(new HTMLSearchBar(), articleList);
-
+    //Set the sections and add them into their articles
     for (let i = 0; i < sectionList.length; i++) {
         if (sectionList[i] instanceof HTMLCaesarSection) {
             console.log(articleList[i].title);

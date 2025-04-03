@@ -1,8 +1,15 @@
+
+/** 
+ * This is the class for fetching the information of an api
+*/
 class Fetch {
-    constructor() {
-
-    }
-
+    /** 
+    * Fetches the data from the api
+    * @param {string} url -The url for the api
+    * @param {string} parameters -The parameters to add in the url
+    * @param {string} key -The key to the api
+    * @returns {Promise<Blob>} -The data in img format
+    */
     async fetchData(url, parameters = [""], key = "") {
         try {
             const finalURL = new URL(url);
@@ -18,6 +25,12 @@ class Fetch {
         }
     }
 
+    /** 
+    * Fetches the data from the api, if it does not have a key
+    * it only uses the url, else it will add the key to the fetch
+    * @param {string} url -The url for the api
+    * @param {string} key -The key to the api
+    */
     async setResponse(url, key) {
         if (key == "") return await fetch(url);
 
@@ -28,10 +41,15 @@ class Fetch {
         });
     }
 
-    async getGameData(url) {
+    /** 
+    * Returns the QR code
+    * @param {string} url -URL that wants to be made into a QR code
+    * @returns {*} -The result of that fetch
+    */
+    async getQrCode(url) {
         let myURL = "https://api.qrserver.com/v1/create-qr-code/?data=" + url + "&amp;size=100x100";
         try {
-            let aux = new URL(url);
+            new URL(url);
         } catch {
             return false;
         }

@@ -1,6 +1,14 @@
 
-
+/** 
+ * The manager of all html, generates the header, main and footer
+*/
 class HTMLMain {
+
+    /**
+     * @constructor
+     * @param {string} searchBar - The searchbar
+     * @param {HTMLSection[n]} articles - Array of all articles
+     */
     constructor(searchBar, articles) {
         this.articles = articles;
         this.searchBar = searchBar;
@@ -10,7 +18,10 @@ class HTMLMain {
         this.setFooter();
 
     }
-
+    /**
+     * Sets the header with the title and sets the event listener
+     * of the favorites button
+     */
     setHeader() {
         this.header = document.getElementsByClassName("myHeader")[0];
 
@@ -24,12 +35,17 @@ class HTMLMain {
 
         const text = document.createElement("h1");
         text.textContent = " Harpocrates";
-        text.classList.add("fa-solid", "fa-user-secret");
 
         this.header.append(text, this.favoritesButton);
 
     }
 
+    /**
+     * If you are at home it will change to Favorites,
+     * this only makes it show the ones that are favorites,
+     * and changes the Favorites button to the Home button
+     * which will return you to home and make all articles appear
+     */
     favorites() {
         if (this.favoritesButton.textContent == "Home") {
             for (let article of this.articles) {
@@ -52,6 +68,9 @@ class HTMLMain {
 
     }
 
+     /**
+     * Sets the search bar and the articles 
+     */
     addArticlesToMain() {
         this.searchBar.initHTML(this.main, "mySearchBar");
         this.searchBar.setArticles(this.articles);
@@ -60,7 +79,9 @@ class HTMLMain {
         }
     }
 
-
+     /**
+     * Sets the footer
+     */
     setFooter() {
         this.footer = document.getElementsByClassName("myFooter")[0];
         const text = document.createElement("p");
