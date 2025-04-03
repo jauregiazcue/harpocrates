@@ -18,6 +18,19 @@ class HTMLArticle extends HTMLObject{
         this.titleSection = this.makeNewElement("section","","myTitle");
 
         this.favorite = document.createElement("button");
+        
+        this.setFavorite();
+
+        this.dropDownButton = document.createElement("button");
+        this.dropDownButton.classList.add("fa-solid","fa-caret-down","myArticleButton");
+        
+        let rightSection = this.makeNewElement("section","","myArticleButtons");
+        rightSection.append(this.favorite,this.dropDownButton);
+        this.titleSection.append(title,rightSection);
+        this.object.appendChild(this.titleSection);
+    }
+
+    setFavorite() {
         let fav = localStorage.getItem(this.title);
         if(fav) {
             if(fav == "true") {
@@ -29,19 +42,7 @@ class HTMLArticle extends HTMLObject{
         } else {
             this.favorite.classList.add("fa-regular","fa-bookmark");
         }
-        this.setFavorite();
 
-        this.dropDownButton = document.createElement("button");
-        this.dropDownButton.classList.add("fa-solid","fa-caret-down","myArticleButton");
-        
-
-        let rightSection = this.makeNewElement("section","","myArticleButtons");
-        rightSection.append(this.favorite,this.dropDownButton);
-        this.titleSection.append(title,rightSection);
-        this.object.appendChild(this.titleSection);
-    }
-
-    setFavorite() {
         this.favorite.addEventListener("click",(event)=>{
             event.stopPropagation();
             if(this.favorite.classList.contains("fa-solid")) {
