@@ -1,8 +1,8 @@
 import { HTMLCaesarSection } from "./htmlCaesarSection.js";
 
 class HTMLVigereSection extends HTMLCaesarSection {
-    constructor(title) {
-        super(title);
+    constructor() {
+        super();
 
         this.keyIndex = 0;
     }
@@ -36,9 +36,6 @@ class HTMLVigereSection extends HTMLCaesarSection {
         return this.characters[newCharacter];
     }
 
-    keySettings() {
-        
-    }
 }
 
 export { HTMLVigereSection };

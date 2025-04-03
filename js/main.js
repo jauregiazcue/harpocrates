@@ -18,11 +18,11 @@ function main() {
     ]
 
     let sectionList = [
-        new HTMLQRSection("Test QR"),
-        new HTMLCaesarSection("Test QR"),
-        new HTMLAtbashSection("Test QR"),
-        new HTMLAlphabetToNumberSection("Test QR"),
-        new HTMLVigereSection("Test QR")
+        new HTMLQRSection(),
+        new HTMLCaesarSection(),
+        new HTMLAtbashSection(),
+        new HTMLAlphabetToNumberSection(),
+        new HTMLVigereSection()
     ]
 
     let myMain = new HTMLMain(new HTMLSearchBar(),articleList);

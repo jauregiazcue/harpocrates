@@ -1,8 +1,8 @@
 import { HTMLCipherSection } from "./htmlCipher.js";
 
 class HTMLAlphabetToNumberSection extends HTMLCipherSection{
-    constructor(title) {
-        super(title);
+    constructor() {
+        super();
         this.numbers = [];
         for(let i = 1; i < 27; i++) {
             this.numbers.push(i.toString());

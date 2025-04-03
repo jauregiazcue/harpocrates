@@ -2,8 +2,8 @@ import { HTMLSection } from "./htmlSection.js";
 import { fetchManager } from "../api.js";
 
 class HTMLQRSection extends HTMLSection {
-    constructor(title) {
-        super(title);
+    constructor() {
+        super();
     }
 
     generateQRCode(url) {
@@ -18,14 +18,8 @@ class HTMLQRSection extends HTMLSection {
     }
 
     render() {
-        //Empty article
-        this.object.innerHTML = "";
+        super.render();
 
-        const leftDiv = this.makeNewElement("div", "", "leftSection");
-        const leftform = this.makeNewElement("form", "");
-        this.leftInput = this.makeNewElement("textarea", "","inputSection");
-
-        const rightDiv = this.makeNewElement("div", "", "rightSection");
         this.image = this.makeNewElement("img", "");
 
         fetchManager.getGameData("https://jauregiazcue.github.io/portfolio/").then((data) => {
@@ -52,11 +46,8 @@ class HTMLQRSection extends HTMLSection {
 
         });
 
-        leftform.appendChild(this.leftInput);
-        leftDiv.appendChild(leftform);
-        rightDiv.appendChild(this.image);
-        rightDiv.appendChild(this.link);
-        this.object.append(leftDiv, rightDiv);
+        this.rightDiv.appendChild(this.image);
+        this.rightDiv.appendChild(this.link);
     }
 
     download(url) {

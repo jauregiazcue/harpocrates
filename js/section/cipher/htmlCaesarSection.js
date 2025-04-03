@@ -1,8 +1,8 @@
 import { HTMLCipherSection } from "./htmlCipher.js";
 
 class HTMLCaesarSection extends HTMLCipherSection {
-    constructor(title) {
-        super(title);
+    constructor() {
+        super();
     }
 
     render() {
@@ -12,7 +12,7 @@ class HTMLCaesarSection extends HTMLCipherSection {
         const topDiv = this.makeNewElement("div", "", "topSection");
         const bottomDiv = this.makeNewElement("div","","bottomSection");
 
-        const leftDiv = this.makeNewElement("div", "", "rightSection");
+        this.leftDiv = this.makeNewElement("div", "", "rightSection");
         const leftform = this.makeNewElement("form", "","keyForm");
 
         const keyForm = this.makeNewElement("form", "");
@@ -31,7 +31,7 @@ class HTMLCaesarSection extends HTMLCipherSection {
         });
 
 
-        const rightDiv = this.makeNewElement("div", "", "rightSection");
+        this.rightDiv = this.makeNewElement("div", "", "rightSection");
         const rightform = this.makeNewElement("form", "");
         this.rightInput = this.makeNewElement("textarea", "", "inputSection");
 

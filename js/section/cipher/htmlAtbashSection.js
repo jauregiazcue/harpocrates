@@ -1,8 +1,8 @@
 import { HTMLCipherSection } from "./htmlCipher.js";
 
 class HTMLAtbashSection extends HTMLCipherSection{
-    constructor(title) {
-        super(title);
+    constructor() {
+        super();
     }
 
     changeCharacter(character) {

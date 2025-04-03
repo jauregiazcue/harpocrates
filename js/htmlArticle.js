@@ -1,6 +1,14 @@
 import { HTMLObject } from "./htmlObject.js";
-
+/** 
+ * The article class that managed itself and also the section that will have inside
+ * @extends HTMLObject
+*/
 class HTMLArticle extends HTMLObject{
+    /**
+     * @constructor
+     * @param {string} title - The title the article will have
+     * Sets the object type to article, sets it's title
+     */
     constructor(title) {
         super();
         this.title = title;
@@ -9,6 +17,11 @@ class HTMLArticle extends HTMLObject{
         this.section = null;
     }
 
+    /**
+    * Generates the title section of the article, 
+    * this includes the title string, 
+    * the favorite button and the dropdown button. 
+    */
     render() {
         //Empty article
         this.object.innerHTML = "";
@@ -30,6 +43,10 @@ class HTMLArticle extends HTMLObject{
         this.object.appendChild(this.titleSection);
     }
 
+    /**
+    * Using the local storages, sets the state of the favorite buttons
+    * and also sets the event listener for changing the states of the favorite
+    */
     setFavorite() {
         let fav = localStorage.getItem(this.title);
         if(fav) {
@@ -57,6 +74,12 @@ class HTMLArticle extends HTMLObject{
         });
     }
 
+    /**
+    * Sets the section html element into the article, and added spacing using br.
+    * Also includes an event listener to the title section for making the section 
+    * appear or disappear when clicked
+    * @param {*} section - The section that will be added to the article
+    */
     setSection(section) {
         this.section = section;
         this.section.style.display = "none";

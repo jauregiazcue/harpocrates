@@ -1,33 +1,24 @@
 import { HTMLSection } from "../htmlSection.js";
 
-class HTMLCipherSection extends HTMLSection{
-    constructor(title) {
-        super(title);
+class HTMLCipherSection extends HTMLSection {
+    constructor() {
+        super();
         this.characters = "abcdefghijklmnopqrstuvwxyz";
     }
     render() {
-        //Empty article
-        this.object.innerHTML = "";
-
-        const leftDiv = this.makeNewElement("div", "", "leftSection");
-        const leftform = this.makeNewElement("form", "");
-        this.leftInput = this.makeNewElement("textarea", "","inputSection");
+        super.render();
 
         this.leftInput.addEventListener('input',() => {
             this.setFunction();
         });
 
-        const rightDiv = this.makeNewElement("div", "", "rightSection");
-        const rightform = this.makeNewElement("form", "");
+       const rightform = this.makeNewElement("form", "");
         this.rightInput = this.makeNewElement("textarea", "","inputSection");
 
         this.rightInput.readOnly = true;
-        leftform.appendChild(this.leftInput);
-        leftDiv.appendChild(leftform);
 
         rightform.appendChild(this.rightInput);
-        rightDiv.appendChild(rightform);
-        this.object.append(leftDiv,rightDiv);
+        this.rightDiv.appendChild(rightform);
     }
 
     setFunction() {
