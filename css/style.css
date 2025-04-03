@@ -3,16 +3,12 @@
   --text: #5A8648;
   --articleText: #EEE5E9;
   --background: #011936;
-  --primary: #011936;
-  --secondary: #011936;
   --accent: #5A8648;
-  --hover: lightgray;
   --textBackground: #2D3142;
 }
 
 body {
-  background-image: radial-gradient(black,var(--background) 60%);
-  background-color: var(--background);
+  background-image: radial-gradient(black, var(--background) 60%);
   color: var(--text);
 }
 
@@ -26,17 +22,20 @@ body {
 }
 
 .myHeader h1 {
-  display: inline;
-  width:50%;
+  margin: auto 0;
+  width: 50%;
+  height: 5vh;
 }
 
 .myHeader button {
-  width: 20%;
+  width: 40%;
   font-size: xx-large;
   color: var(--accent);
   background-color: rgba(0, 0, 0, 0);
   border-style: none;
+  text-align: end;
 }
+
 /* --------------------- MAIN ---------------------*/
 .myMain {
   min-height: 75vh;
@@ -50,12 +49,12 @@ body {
 }
 
 .mySearchBar form {
-  width:90%;
-  margin : auto auto;
+  width: 90%;
+  margin: auto auto;
 }
 
 .mySearchBar input {
-  width:100%;
+  width: 100%;
   border-style: solid;
   border-radius: 5px;
   border-color: var(--accent);
@@ -73,7 +72,7 @@ body {
   border-style: solid;
   border-radius: 5px;
   border-color: var(--accent);
-  background-color: var(--primary);
+  background-color: var(--background);
 
 }
 
@@ -130,7 +129,7 @@ body {
   display: flex;
   justify-content: center;
   border-top-style: solid;
-  background-color: var(--secondary);
+  background-color: var(--background);
   transition: 0.5s;
 }
 
@@ -139,7 +138,7 @@ body {
   flex-direction: column;
   justify-content: center;
   border-top-style: solid;
-  background-color: var(--secondary);
+  background-color: var(--background);
   transition: 0.5s;
 }
 
@@ -250,4 +249,25 @@ hr {
   width: 90%;
   border: 1px solid var(--accent);
   border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .myArticle {
+    width: 80%;
+  }
+
+  .mySearchBar {
+    width: 80%;
+  }
+
+  .myHeader h1 {
+    margin: auto 0;
+    width: 50%;
+    height: 5vh;
+    font-size: x-large;
+  }
+
+  .myHeader button {
+    font-size: x-large;
+  }
 }

@@ -24,7 +24,7 @@ class HTMLMain {
 
         const text = document.createElement("h1");
         text.textContent = " Harpocrates";
-        text.classList.add("fa-solid", "fa-user-secret");
+        //text.classList.add("fa-solid", "fa-user-secret");
 
         this.header.append(text, this.favoritesButton);
 
