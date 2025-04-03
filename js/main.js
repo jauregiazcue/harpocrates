@@ -5,7 +5,7 @@ import { HTMLQRSection } from "./section/htmlQrSection.js";
 import { HTMLAtbashSection } from "./section/cipher/htmlAtbashSection.js";
 import { HTMLAlphabetToNumberSection } from "./section/cipher/htmlAlphabetToNumberSection.js";
 import { HTMLCaesarSection } from "./section/cipher/htmlCaesarSection.js";
-import {HTMLVigereSection} from "./section/cipher/htmlVigereSection.js";
+import { HTMLVigereSection } from "./section/cipher/htmlVigereSection.js";
 
 function main() {
     //SET INITIAL ARTICLE
@@ -25,7 +25,7 @@ function main() {
         new HTMLVigereSection()
     ]
 
-    let myMain = new HTMLMain(new HTMLSearchBar(),articleList);
+    let myMain = new HTMLMain(new HTMLSearchBar(), articleList);
 
     for (let i = 0; i < sectionList.length; i++) {
         if (sectionList[i] instanceof HTMLCaesarSection) {

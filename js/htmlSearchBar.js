@@ -34,11 +34,11 @@ class HTMLSearchBar extends HTMLObject {
     }
 
     activateAllArticles() {
-        for (let article of this.articles) { 
+        for (let article of this.articles) {
             article.object.classList.add("myArticle");
             article.object.classList.remove("myHiddenArticle");
         }
-        
+
     }
 
     checkNames(search) {

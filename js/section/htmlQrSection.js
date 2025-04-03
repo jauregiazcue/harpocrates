@@ -4,7 +4,7 @@ import { fetchManager } from "../api.js";
 /** 
  * The section that will be added into an HTMLArticle
  * This is the section that creates QR Codes
- * @extends HTMLObject
+ * @extends HTMLSection
 */
 class HTMLQRSection extends HTMLSection {
 
@@ -32,8 +32,8 @@ class HTMLQRSection extends HTMLSection {
             }
         });
 
-        this.link = this.makeNewElement("button","");
-        this.link.classList.add("fa-solid","fa-file-arrow-down");
+        this.link = this.makeNewElement("button", "");
+        this.link.classList.add("fa-solid", "fa-file-arrow-down");
         this.link.addEventListener('click', () => {
             this.download(this.image.src);
         });

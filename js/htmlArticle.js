@@ -3,7 +3,7 @@ import { HTMLObject } from "./htmlObject.js";
  * The article class that managed itself and also the section that will have inside
  * @extends HTMLObject
 */
-class HTMLArticle extends HTMLObject{
+class HTMLArticle extends HTMLObject {
     /**
      * @constructor
      * @param {string} title - The title the article will have
@@ -28,19 +28,19 @@ class HTMLArticle extends HTMLObject{
 
         const title = this.makeNewElement("h2", this.title, "articleTitle");
 
-        this.titleSection = this.makeNewElement("section","","myTitle");
+        this.titleSection = this.makeNewElement("section", "", "myTitle");
 
         this.favorite = document.createElement("button");
-        
+
         this.setFavorite();
 
         this.dropDownButton = document.createElement("button");
-        this.dropDownButton.classList.add("fa-solid","fa-caret-down","myArticleButton");
-        
-        let rightSection = this.makeNewElement("section","","myArticleButtons");
-        
-        rightSection.append(this.favorite,this.dropDownButton);
-        this.titleSection.append(title,rightSection);
+        this.dropDownButton.classList.add("fa-solid", "fa-caret-down", "myArticleButton");
+
+        let rightSection = this.makeNewElement("section", "", "myArticleButtons");
+
+        rightSection.append(this.favorite, this.dropDownButton);
+        this.titleSection.append(title, rightSection);
         this.object.appendChild(this.titleSection);
     }
 
@@ -50,27 +50,27 @@ class HTMLArticle extends HTMLObject{
     */
     setFavorite() {
         let fav = localStorage.getItem(this.title);
-        if(fav) {
-            if(fav == "true") {
-                this.favorite.classList.add("fa-solid","fa-bookmark");
-                
+        if (fav) {
+            if (fav == "true") {
+                this.favorite.classList.add("fa-solid", "fa-bookmark");
+
             } else {
-                this.favorite.classList.add("fa-regular","fa-bookmark");
+                this.favorite.classList.add("fa-regular", "fa-bookmark");
             }
         } else {
-            this.favorite.classList.add("fa-regular","fa-bookmark");
+            this.favorite.classList.add("fa-regular", "fa-bookmark");
         }
 
-        this.favorite.addEventListener("click",(event)=>{
+        this.favorite.addEventListener("click", (event) => {
             event.stopPropagation();
-            if(this.favorite.classList.contains("fa-solid")) {
-                this.favorite.classList.remove("fa-solid","fa-bookmark");
-                this.favorite.classList.add("fa-regular","fa-bookmark");
-                localStorage.setItem(this.title,"false");
+            if (this.favorite.classList.contains("fa-solid")) {
+                this.favorite.classList.remove("fa-solid", "fa-bookmark");
+                this.favorite.classList.add("fa-regular", "fa-bookmark");
+                localStorage.setItem(this.title, "false");
             } else {
-                this.favorite.classList.remove("fa-regular","fa-bookmark");
-                this.favorite.classList.add("fa-solid","fa-bookmark");
-                localStorage.setItem(this.title,"true");
+                this.favorite.classList.remove("fa-regular", "fa-bookmark");
+                this.favorite.classList.add("fa-solid", "fa-bookmark");
+                localStorage.setItem(this.title, "true");
             }
         });
     }
@@ -89,10 +89,10 @@ class HTMLArticle extends HTMLObject{
         this.object.appendChild(this.br);
         this.br.style.display = "none";
 
-        this.titleSection.addEventListener("click",(event)=>{
+        this.titleSection.addEventListener("click", (event) => {
             event.stopPropagation();
-            if(!this.section) return; 
-            if(this.section.style.display == "none") {
+            if (!this.section) return;
+            if (this.section.style.display == "none") {
                 this.dropDownButton.style.transform = "rotate(180deg)";
                 this.section.style.height = "auto";
                 this.section.style.display = "flex";
@@ -103,11 +103,11 @@ class HTMLArticle extends HTMLObject{
                 this.section.style.display = "none";
                 this.br.style.display = "none";
             }
-            
+
         });
 
-        
+
     }
 }
 
-export {HTMLArticle};
+export { HTMLArticle };

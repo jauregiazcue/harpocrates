@@ -5,7 +5,7 @@ import { HTMLObject } from "../htmlObject.js";
  * This is a bare bones section that will be later be extended
  * @extends HTMLObject
 */
-class HTMLSection extends HTMLObject{
+class HTMLSection extends HTMLObject {
 
     /**
      * @constructor
@@ -25,14 +25,14 @@ class HTMLSection extends HTMLObject{
 
         this.leftDiv = this.makeNewElement("div", "", "leftSection");
         const leftform = this.makeNewElement("form", "");
-        this.leftInput = this.makeNewElement("textarea", "","inputSection");
+        this.leftInput = this.makeNewElement("textarea", "", "inputSection");
 
         this.rightDiv = this.makeNewElement("div", "", "rightSection");
 
         leftform.appendChild(this.leftInput);
         this.leftDiv.appendChild(leftform);
-        this.object.append(this.leftDiv,this.rightDiv);
+        this.object.append(this.leftDiv, this.rightDiv);
     }
 }
 
-export {HTMLSection};
+export { HTMLSection };
