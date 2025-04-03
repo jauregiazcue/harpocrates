@@ -1,22 +1,25 @@
 import { HTMLSection } from "./htmlSection.js";
 import { fetchManager } from "../api.js";
 
+/** 
+ * The section that will be added into an HTMLArticle
+ * This is the section that creates QR Codes
+ * @extends HTMLObject
+*/
 class HTMLQRSection extends HTMLSection {
+
+    /**
+     * @constructor
+     * Just calls the constructor of the HTMLSection
+     */
     constructor() {
         super();
     }
 
-    generateQRCode(url) {
-        if (!url || url == "") return false;
-        let myURL;
-        try {
-            myURL = new URL(url);
-        } catch (e) {
-            return false;
-        }
-        return "https://api.qrserver.com/v1/create-qr-code/?data=" + myURL + "&amp;size=100x100";
-    }
-
+    /**
+    * Generates the left div with the form and the input, and the right div with the qr image
+    * sets the event listener for left input to change the qr if it is an url 
+    */
     render() {
         super.render();
 
@@ -50,6 +53,10 @@ class HTMLQRSection extends HTMLSection {
         this.rightDiv.appendChild(this.link);
     }
 
+    /**
+    * The function that makes it download the qr code in png format
+    * @param {string} url - Url to the qr code image to be downloaded
+    */
     download(url) {
         console.log(url);
         const a = document.createElement('a');

@@ -21,7 +21,6 @@ class HTMLSection extends HTMLObject{
     * and sets the right div empty for childs to implement
     */
     render() {
-        //Empty article
         this.object.innerHTML = "";
 
         this.leftDiv = this.makeNewElement("div", "", "leftSection");

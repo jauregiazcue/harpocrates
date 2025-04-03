@@ -38,6 +38,7 @@ class HTMLArticle extends HTMLObject{
         this.dropDownButton.classList.add("fa-solid","fa-caret-down","myArticleButton");
         
         let rightSection = this.makeNewElement("section","","myArticleButtons");
+        
         rightSection.append(this.favorite,this.dropDownButton);
         this.titleSection.append(title,rightSection);
         this.object.appendChild(this.titleSection);
