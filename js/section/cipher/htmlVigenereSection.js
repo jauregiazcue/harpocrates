@@ -8,7 +8,7 @@ import { HTMLCaesarSection } from "./htmlCaesarSection.js";
  * and a is 0, the return character will be k
  * @extends HTMLCaesarSection
 */
-class HTMLVigereSection extends HTMLCaesarSection {
+class HTMLVigeneSection extends HTMLCaesarSection {
 
     /**
     * @constructor
@@ -65,4 +65,4 @@ class HTMLVigereSection extends HTMLCaesarSection {
 
 }
 
-export { HTMLVigereSection };
+export { HTMLVigeneSection };

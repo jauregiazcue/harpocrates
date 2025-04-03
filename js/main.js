@@ -5,7 +5,7 @@ import { HTMLQRSection } from "./section/htmlQrSection.js";
 import { HTMLAtbashSection } from "./section/cipher/htmlAtbashSection.js";
 import { HTMLAlphabetToNumberSection } from "./section/cipher/htmlAlphabetToNumberSection.js";
 import { HTMLCaesarSection } from "./section/cipher/htmlCaesarSection.js";
-import { HTMLVigereSection } from "./section/cipher/htmlVigereSection.js";
+import { HTMLVigeneSection } from "./section/cipher/htmlVigenereSection.js";
 
 
 function main() {
@@ -23,7 +23,7 @@ function main() {
         new HTMLCaesarSection(),
         new HTMLAtbashSection(),
         new HTMLAlphabetToNumberSection(),
-        new HTMLVigereSection()
+        new HTMLVigeneSection()
     ]
     //Create the main with a search bar and the articles
     new HTMLMain(new HTMLSearchBar(), articleList);
