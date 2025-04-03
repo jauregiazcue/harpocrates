@@ -17,13 +17,43 @@ class HTMLArticle extends HTMLObject{
 
         this.titleSection = this.makeNewElement("section","","myTitle");
 
+        this.favorite = document.createElement("button");
+        let fav = localStorage.getItem(this.title);
+        if(fav) {
+            if(fav == "true") {
+                this.favorite.classList.add("fa-solid","fa-bookmark");
+                
+            } else {
+                this.favorite.classList.add("fa-regular","fa-bookmark");
+            }
+        } else {
+            this.favorite.classList.add("fa-regular","fa-bookmark");
+        }
+        this.setFavorite();
+
         this.dropDownButton = document.createElement("button");
         this.dropDownButton.classList.add("fa-solid","fa-caret-down","myArticleButton");
         
 
-
-        this.titleSection.append(title,this.dropDownButton);
+        let rightSection = this.makeNewElement("section","","myArticleButtons");
+        rightSection.append(this.favorite,this.dropDownButton);
+        this.titleSection.append(title,rightSection);
         this.object.appendChild(this.titleSection);
+    }
+
+    setFavorite() {
+        this.favorite.addEventListener("click",(event)=>{
+            event.stopPropagation();
+            if(this.favorite.classList.contains("fa-solid")) {
+                this.favorite.classList.remove("fa-solid","fa-bookmark");
+                this.favorite.classList.add("fa-regular","fa-bookmark");
+                localStorage.setItem(this.title,"false");
+            } else {
+                this.favorite.classList.remove("fa-regular","fa-bookmark");
+                this.favorite.classList.add("fa-solid","fa-bookmark");
+                localStorage.setItem(this.title,"true");
+            }
+        });
     }
 
     setSection(section) {
@@ -33,6 +63,7 @@ class HTMLArticle extends HTMLObject{
         this.br = document.createElement("br");
         this.object.appendChild(this.br);
         this.br.style.display = "none";
+
         this.titleSection.addEventListener("click",(event)=>{
             event.stopPropagation();
             if(!this.section) return; 
