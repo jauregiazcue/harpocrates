@@ -1,14 +1,14 @@
 /* --------------------- COLORS ---------------------*/
 :root {
-  --text: #5A8648;
-  --articleText: #EEE5E9;
-  --background: #011936;
-  --accent: #5A8648;
-  --textBackground: #2D3142;
+  --text: #EEE5E9;
+  --articleText: #3a4d5f;
+  --background: #3a4d5f;
+  --accent: #EEE5E9;
+  --titleText: #EEE5E9;
 }
 
 body {
-  background-image: radial-gradient(black, var(--background) 60%);
+  background-image: radial-gradient(#314150, var(--background) 40%);
   color: var(--text);
 }
 
@@ -58,7 +58,7 @@ body {
   border-style: solid;
   border-radius: 5px;
   border-color: var(--accent);
-  background-color: var(--textBackground);
+  background-color: var(--text);
   color: var(--articleText);
 }
 
@@ -142,6 +142,10 @@ body {
   transition: 0.5s;
 }
 
+.articleTitle {
+  color: #EEE5E9 !important;
+}
+
 
 
 .myCaesarSection .bottomSection {
@@ -156,7 +160,7 @@ body {
 
   width: 93%;
 
-  background-color: var(--textBackground);
+  background-color: var(--text);
   color: var(--articleText);
   border-style: solid;
   border-color: var(--accent);
@@ -194,7 +198,7 @@ body {
   vertical-align: top;
   width: 75%;
   aspect-ratio: 1 / 1;
-  background-color: var(--textBackground);
+  background-color: var(--text);
   color: var(--articleText);
   border-style: solid;
   border-color: var(--accent);
